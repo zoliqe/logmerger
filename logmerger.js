@@ -6,7 +6,7 @@ const yes = 'Y'
 const qsosMatch = (q1, q2) => q1.call === q2.call && q1.band === q2.band && q1.mode === q2.mode // TODO remove suffixes?
 const qsoIgnored = qso => qso.qsl_sent_via === ignore || qso.qsl_sent === yes
 
-const qsos = parseLog('log.adi')
+let qsos = parseLog('log.adi')
 const contestQsos = parseLog('contest.adi')
 if (contestQsos) {
 	qsos = [...qsos, ...contestQsos]
